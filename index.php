@@ -95,10 +95,10 @@
 			window.addEventListener('load', function checkDossier () {
 					let tailleDossier = document.getElementById('tailleGo');
 					tailleDossier = Number(tailleGo.textContent);
-					if (tailleDossier <= 1) {
+					if (tailleDossier <= 20) {
 						tailleGo.style.color = "#0A2C37";
 					}
-					else if (tailleDossier > 1 && tailleDossier < 1.5) {
+					else if (tailleDossier > 1 && tailleDossier < 25) {
 						tailleGo.style.color = "#F58333";
 					}
 					else  {
