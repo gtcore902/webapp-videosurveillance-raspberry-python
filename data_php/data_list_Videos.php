@@ -1,14 +1,14 @@
 <?php
 
-			// RECUPERER LA TAILLE DU DOSSIER
-			$path = '/var/www/html/videos';
-			$dossier2 = chdir($path); // CHANGEMENT DE DOSSIER COURANT
-			$dossier3 = getcwd(); // OBTENIR LE STRING DU DOSSIER COURANT
-			$fichiers = count($dossier3);
+	// RECUPERER LA TAILLE DU DOSSIER
+	//$path = '/var/www/html/videos';
+	$path = '../videos';
+	$dossier2 = chdir($path); // CHANGEMENT DE DOSSIER COURANT
+	$dossier3 = getcwd(); // OBTENIR LE STRING DU DOSSIER COURANT
+	$fichiers = count($dossier3);
 
-//
-
-	$f = '/var/www/html/videos';
+	//f = '/var/www/html/videos';
+	$f = '../videos';
 	$io = popen ( '/usr/bin/du -sk ' . $f, 'r' );
 	$size = fgets ( $io, 4096);
 	$size = substr ( $size, 0, strpos ( $size, "\t" ) );
@@ -30,6 +30,7 @@
 		echo "<a class=\"liensDesVideos\" href=\"videos/".$elem."\">".$elem."</a>";
 		$elem1 = filesize($elem)/1000000; // ON RECUPERE LE TAILLE DU FICHIER EN BYTES ET ON DIVISE PAR 1000000 POUR MO
 		echo "<b>".round($elem1, 2). " Mo</b>"; // ON ARRONDIT A DEUX DECIMALES
+		echo "<img class='remove' src='./img/bin.svg'/>";
 		echo "</div>";
 	}
 

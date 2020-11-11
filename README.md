@@ -1,46 +1,46 @@
-# Application web pour vidéosurveillance avec RaspberryPi et motion
-Application web hébergée sur RaspberryPi, streaming de caméras grâce avec motion .
-Quelques liens utiles pour installer motion sur RaspberryPi :
+# Web application for video surveillance with RaspberryPi and motion :video_camera:
+Web application hosted on RaspberryPi, streaming cameras with motion.
+Some useful links to install motion on RaspberryPi :
 
 &nbsp;
 [trevilly.com](https://trevilly.com/installation-de-motion-sur-raspberry-pi3/)
 
-&nbsp;
 [opendomotech.com](https://opendomotech.com/videosurveillance-avec-raspberry-pi-et-motion/)
 
-Ce dépôt contient le code de l'application web, la gestion automatique des suppressions de fichiers, la notification par mail au déclenchement d'enregistrements (à personnaliser).
+This repository contains the code of the web application, the automatic management of file deletions, the email notification when recordings are triggered (to be personalized).
 
-## Illustrations de l'application :
+## Application illustrations :
 ![Illustration 1 vidéosurveillance en ligne](./illustrations/videosurveillance-compressor.png)
 
 &nbsp;
-## Fonctions principales :
-* Affichage streaming live de deux caméras
-* Affichage du listing des enregistrements vidéos
-* Lecture des enregistrements dans la page
-* Affichage en temps réel du nombre de fichiers d'enregistrements stockés sur le serveur
-* Affichage en temps réel de la taille du dossier d'enregistrement (à personnaliser)
-* Affichage en temps réel du time du dernier enregistrement
-* Lien "fake" en cas d'accès non autorisés sur le serveur avec envoi de mail (fichier "mail_raspicam_acces_admin.py")
-* Suppression automatique des enregistrements personnalisable (fichier "suppvideo2.py") à mettre en crontab sur le RaspberryPi
-* Notification par mail à la fin d'un enregistrement si fichier > 4mo (à personnaliser)
+## Main duties :
+* :one: Live streaming display from two cameras
+* :two: Viewing the list of video recordings
+* :three: Reading records in the page
+* :four: Real-time display of the number of recording files stored on the server
+* :five: Real-time display of the size of the recording folder (to be customized)
+* :six: Real-time display of the time of the last recording
+* :seven: "Fake" link in the event of unauthorized access to the server with sending of mail ("mail_raspicam_acces_admin.py" file)
+* :eight: Automatic deletion of customizable recordings ("suppvideo2.py" file) in crontab on the RaspberryPi
+* :nine: Email notification at the end of a recording if file > 4mb (to be personalized)
 
 
 &nbsp;
-## Améliorations à prévoir :
-* Actualisation en temps réel du listing des enregistrements (sans action manuelle), avec node.js pour l'envoi de données depuis le serveur
-* Application gourmande en trafic réseau : node.js
-* Affichage en temps réel de la température du processeur du RaspberryPi
+## Improvements to be expected :
+* Real-time update of the record listing (without manual action), with node.js for sending data from the server
+* Application greedy in network traffic: node.js
+* Real-time display of the temperature of the RaspberryPi processor
+
 
 
 &nbsp;
 ## Contributions :
-Vous êtes tous les bienvenus :)
-1. Fork
-2.
+You are all welcome :smiley:
+* :one:  Fork it !
+* :two:
 ```
 git checkout -b developpement
 git commit -am 'New feature'
 git push origin developpement
 ```
-3. Créer Pull Request
+* :three: Create Pull Request
