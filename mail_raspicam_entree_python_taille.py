@@ -25,9 +25,9 @@ if (os.path.getsize(dossier[len(dossier) - 1])) >= 4000000:
 	msg['Subject'] = "Vidéo caméra entrée " + taille + " Mo."
 
 	body = "<p>Mouvements sur vidéosurveillance : <b> "
-	body += taille
-	body += " Mo.</b></p></br></br><a style=\"color:white; text-decoration:none;\" href=\"http://79.95.246.12/\"><div style=\"padding:25px; width:50%; background-color:#0174DF; border-radius:10px;text-align:center;\">ACCES SERVEUR</div></a>"
-	body += " Mo.</b></p></br></br><a style=\"color:white; text-decoration:none;\" href=\"http://79.95.246.12/videos/" + fileName + "\"><div style=\"padding:25px; width:50%; background-color:#0174DF; border-radius:10px;text-align:center;\">VOIR FICHIER</div></a>"
+	body += taille + " Mo."
+	body += "</b></p></br></br><a style=\"color:white; text-decoration:none;\" href=\"http://79.95.246.12/videos/" + fileName + "\"><div style=\"padding:25px; width:50%; background-color:#0174DF; border-radius:10px;text-align:center;\">VOIR FICHIER</div></a>"
+	body += "</b></p></br></br><a style=\"color:white; text-decoration:none;\" href=\"http://79.95.246.12/\"><div style=\"padding:25px; width:50%; background-color:#0174DF; border-radius:10px;text-align:center;\">ACCES SERVEUR</div></a>"
 
 	msg.attach(MIMEText(body, 'html'))
 
