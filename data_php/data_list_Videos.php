@@ -1,10 +1,10 @@
 <?php
 
-	// RECUPERER LA TAILLE DU DOSSIER
-	//$path = '/var/www/html/videos';
-	$path = '../videos';
-	$dossier2 = chdir($path); // CHANGEMENT DE DOSSIER COURANT
-	$dossier3 = getcwd(); // OBTENIR LE STRING DU DOSSIER COURANT
+	// get videos list
+	$path = '/var/www/html/videos';
+	//$path = '../videos';
+	$dossier2 = chdir($path); // change work directory
+	$dossier3 = getcwd(); // string work directory
 	$fichiers = count($dossier3);
 
 	//f = '/var/www/html/videos';
@@ -19,7 +19,7 @@
 
 	$doss = scandir($dossier3);
 	$doss1 = sort($doss, SORT_NATURAL);
-	$doss1 = array_reverse($doss); // A CONTROLER
+	$doss1 = array_reverse($doss); // check here
 
 
 	foreach ($doss1 as $elem) {
@@ -28,8 +28,8 @@
 		//echo "<br />";
 		echo date("d F Y (H:i:s)", filemtime($elem)). " :<br /> ";
 		echo "<a class=\"liensDesVideos\" href=\"videos/".$elem."\">".$elem."</a>";
-		$elem1 = filesize($elem)/1000000; // ON RECUPERE LE TAILLE DU FICHIER EN BYTES ET ON DIVISE PAR 1000000 POUR MO
-		echo "<b>".round($elem1, 2). " Mo</b>"; // ON ARRONDIT A DEUX DECIMALES
+		$elem1 = filesize($elem)/1000000; // get size file on bytes -> convert to Mo
+		echo "<b>".round($elem1, 2). " Mo</b>"; // round to two decimals
 		echo "<img class='remove' src='./img/bin.svg'/>";
 		echo "</div>";
 	}

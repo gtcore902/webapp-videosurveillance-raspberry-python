@@ -30,16 +30,18 @@
 
 <div class="bloc_data">
 
+	<!-- number of recordings -->
 	<div class="nb_videos">
-			<p>
-				<span class="variable" id="variable_fichier">
-						<b><img class="loader" src="img/ajax-loader.gif" alt="Loader chargement"></b>
-				</span> rec <img src="img/movie.svg" alt="Nombre de fichiers vidéos">
+		<p>
+			<span class="variable" id="variable_fichier">
+					<b><img class="loader" src="img/ajax-loader.gif" alt="Loader chargement"></b>
+			</span> rec <img src="img/movie.svg" alt="Nombre de fichiers vidéos">
 		</p>
 	</div>
 
 	<div class="separateur"></div>
 
+	<!-- size directory -->
 	<div class="nb_videos">
 			<p>
 				<span class="variable" id="tailleGo">
@@ -50,6 +52,7 @@
 
 <div class="separateur"></div>
 
+	<!-- last record -->
 	<div class="dernier_videos">
 			<p>
 				<span class="variable" id="last_record">
@@ -61,6 +64,7 @@
 
 	<div class="visuel" style="text-align: center;">
 
+		<!-- display streming camera 1 -->
 		<div class="ss_cam" id="ss_cam1">
 			<img id="cameraEntree" src=<?php include('adress_IP_cam1.php') ?>
 					alt="Caméra garage"
@@ -68,6 +72,7 @@
 			<section id="entree"><img id="arrow1" src="img/arrow_dt.svg" alt="Flèche de positionnement"><div>CAMERA ENTREE</div></section>
 		</div>
 
+		<!-- display streming camera 2 -->
 		<div class="ss_cam" id="ss_cam2">
 			<img id="cameraGarage" src=<?php include('adress_IP_cam2.php') ?>
 					alt="Caméra entrée"
@@ -91,7 +96,7 @@
 	<img id="backToTop" src="img/upArrow.svg" alt="Flèche retour haut de page"/>
 
 	<script>
-	// Changement de la couleur de la taille du dossier en fonction de l'espace occupé
+	// change color dir size
 			window.addEventListener('load', function checkDossier () {
 					let tailleDossier = document.getElementById('tailleGo');
 					tailleDossier = Number(tailleGo.textContent);
@@ -104,13 +109,13 @@
 					else  {
 						tailleGo.style.color = "#E03B3D";
 					}
-					setInterval(checkDossier, 1000); // A modifier pour différer avec setTimeout !!
+					setInterval(checkDossier, 1000);
 			})
 
 	</script>
 
 	<script>
-	// Fonction toggle afficher/masquer flux vidéo
+	// toggle function display streams on click
 			$(function () {
 					$('#ss_cam1').on('click', function () {
 							$('#cameraEntree').slideToggle(200);
@@ -130,7 +135,7 @@
 					})
 			})
 
-			// Fonction affichage vidéo dans div au click dans la page
+			// Manage video tag on click
 			$(function () {
 				$(document).on('click', '.liensDesVideos', function (e) {
 						e.preventDefault();
@@ -138,9 +143,9 @@
 								$('video').remove();
 								$('#ancre').remove();
 
-								$('<a id="ancre"</a>').insertBefore(this); // Création ancre
+								$('<a id="ancre"</a>').insertBefore(this); // create ancor
 								$('#ancre').css({'display' : 'inline-block' , 'padding-top' : "15px"});
-								$('#ancre').after('<video>'); // Modification ici
+								$('#ancre').after('<video>');
 								$('video').attr({class: "videoVolee",
 																id: $(this).attr('href'),
 																autoplay : true,
@@ -155,7 +160,7 @@
 														$('#ancre').remove();
 												});
 										})
-										$(this).on('ended', function () { // Fermeture balises audio en fin de lecture
+										$(this).on('ended', function () { // close video tag on end
 											$(this).slideUp(200, function () {
 													$(this).remove();
 													$('#ancre').remove();
@@ -163,7 +168,7 @@
 											;
 										})
 								} );
-								window.location.assign("#ancre"); // Ajout pour ancre
+								window.location.assign("#ancre"); // add for anchor
 
 								// jQuery Mobile
 								$('video').on('swiperight', function () {
@@ -175,7 +180,7 @@
 				})
 			})
 
-			// Gestion affichage flèche retour haut
+			// Manage scroll up
 			$(function () {
 					 			$(window).scroll(function () {
 											let top = $(window).scrollTop();
@@ -185,7 +190,7 @@
 														$('#backToTop').hide(300);
 											}
 								})
-								// Gestion click flèche retour
+								// scroll up on click
 								$('#backToTop').on('click', function () {
 											window.scrollTo(0, 0);
 								})

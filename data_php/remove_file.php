@@ -1,6 +1,9 @@
 <?php
 
+// get cookie
 $fileToRemove = $_COOKIE['myData'];
+
+// change directory
 chdir('../videos');
 
 $path = getcwd() . '/' . $fileToRemove;

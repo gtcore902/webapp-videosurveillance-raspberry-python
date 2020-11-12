@@ -3,3 +3,5 @@ adress_IP_cam2.php
 id_password.py
 /videos
 /data_txt
+.htaccess
+.htpasswd

@@ -4,8 +4,8 @@
 <body>
 
   <?php
-      // EXECUTION DU SCRIPT PYTHON ENVOI MAIL
-      system('python /var/www/html/mail_raspicam_acces_admin.py');
+    // execution of the python script then send mail
+    system('python /var/www/html/mail_raspicam_acces_admin.py');
   ?>
 
   <script type="text/JavaScript">

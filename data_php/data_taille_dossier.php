@@ -1,9 +1,9 @@
 <?php
 
-// RECUPERER LA TAILLE DU DOSSIER
+// get size dir
 $path = '/var/www/html/videos';
-$dossier2 = chdir($path); // CHANGEMENT DE DOSSIER COURANT
-$dossier3 = getcwd(); // OBTENIR LE STRING DU DOSSIER COURANT
+$dossier2 = chdir($path); // change work directory
+$dossier3 = getcwd(); // string work directory
 $fichiers = count($dossier3);
 
 $f = '/var/www/html/videos';

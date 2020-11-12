@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# CE CODE FONCTIONNE AVEC PYTHON 2 MAIS PAS 3 !!
+# work with PYTHON 2 but not 3 !!
 
 from id_password import adresse_mail, password_mail
 

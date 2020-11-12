@@ -1,16 +1,16 @@
-// AJAX function pour récupérer nombre de fichiers
+// AJAX function : get number of files
 window.addEventListener('load', function() {
   getAjax("data_php/data_nb_fichiers.php", 5000, 'variable_fichier');
 })
 
-// AJAX function pour récupérer la taille du dossier
+// AJAX function : get size directory
 window.addEventListener('load', function() {
   getAjax("data_php/data_taille_dossier.php", 5000, 'tailleGo');
 })
 
-// AJAX function pour récupérer le dernier enregistrements
+// AJAX function : get last record
 window.addEventListener('load', function() {
-  let requeteFichiers = new XMLHttpRequest(); // Initialisation AJAX
+  let requeteFichiers = new XMLHttpRequest(); // init AJAX
   let retour;
 
   let timer = setInterval(calculLastRecord, 3000); // Timer
@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
     requeteFichiers.onreadystatechange = function functionName() {
       retour = requeteFichiers.responseText;
       //console.log("Statut de la requête : " + requeteFichiers.status + ", Code statut : " + requeteFichiers.readyState);
-      if (requeteFichiers.readyState == 4) { // Données reçues
+      if (requeteFichiers.readyState == 4) { // data
         document.getElementById('last_record').textContent = requeteFichiers.responseText.toString();
         if (requeteFichiers.responseText <= -60) {
           document.getElementById('last_record').firstChild.textContent += ' h';
@@ -32,9 +32,9 @@ window.addEventListener('load', function() {
   }
 })
 
-// AJAX function pour la liste des vidéos
+// AJAX function : get files list
 window.addEventListener('load', function() {
-  let requeteFichiers = new XMLHttpRequest(); // Initialisation AJAX
+  let requeteFichiers = new XMLHttpRequest(); // init AJAX
   let retour;
 
   //let timer = setInterval(recupererVideos, 5000); // Timer
@@ -42,7 +42,7 @@ window.addEventListener('load', function() {
     requeteFichiers.onreadystatechange = function functionName() {
       retour = requeteFichiers.responseText;
       //console.log("Statut de la requête : " + requeteFichiers.status + ", Code statut : " + requeteFichiers.readyState);
-      if (requeteFichiers.readyState == 4) { // Données reçues
+      if (requeteFichiers.readyState == 4) { // data
         document.getElementById('liensSupp').innerHTML = requeteFichiers.responseText.toString();
       }
     }
@@ -86,7 +86,6 @@ window.addEventListener('load', () => {
           let myInput = document.createElement('input');
           submit = document.createElement('input');
           submit.type = 'submit';
-          //submit.style.backgroundColor = "darkred";
           submit.value = "Supprimer ?"
           myInput.type = 'text';
           myInput.name = 'file';
@@ -98,7 +97,7 @@ window.addEventListener('load', () => {
           myInput.style.display = 'none';
           let parentNode = element.parentNode;
           //console.log(parentNode);
-          parentNode.insertBefore(myForm, element); // Voir ici pour insérer le noeud form après l'élement
+          parentNode.insertBefore(myForm, element);
           submitForm(myForm);
           document.cookie = "myData=" + fileToRemove;
         }
@@ -113,10 +112,10 @@ function submitForm(form) {
     e.preventDefault();
     console.log(fileToRemove);
     $.post('./data_php/remove_file.php', {
-      fileToRemove: fileToRemove // revoir ici ?
+      fileToRemove: fileToRemove
     }, function(data, textStatus, xhr) {
       console.log(data);
-      // Suppression de l'élément dans la page + son span
+      // to remove element on page
       let cible = document.querySelectorAll('img.remove');
       for (const element of cible) {
         //console.log(element.previousSibling.previousSibling.previousSibling.textContent);
