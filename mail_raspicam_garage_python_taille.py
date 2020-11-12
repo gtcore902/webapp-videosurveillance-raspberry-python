@@ -26,8 +26,8 @@ if (os.path.getsize(dossier[len(dossier) - 1])) >= 4000000:
 
 	body = "<p>Mouvements sur vidéosurveillance : <b>"
 	body += taille + " Mo."
-	body += "</b></p></br></br><a style=\"color:white; text-decoration:none;\" href=\"http://" + ip_adress + "/videos/" + fileName + "\"><div style=\"padding:25px; width:50%; background-color:#0174DF; border-radius:10px;text-align:center;\">VOIR FICHIER</div></a></br>"
-	body += "</b></p></br></br><a style=\"color:white; text-decoration:none;\" href=\"http://" + ip_adress + "><div style=\"padding:25px; width:50%; background-color:#0174DF; border-radius:10px;text-align:center;\">ACCES SERVEUR</div></a>"
+	body += "</b></p></br></br><a style=\"color:white; text-decoration:none;\" href=\"http://" + ip_adress + "/videos/" + fileName + "\"><div style=\"padding:25px; width:50%; background-color:#CE3D31; border-radius:10px;text-align:center;\">VOIR FICHIER</div></a></br></br></br>"
+	body += "<a style=\"color:white; text-decoration:none;\" href=\"http://" + ip_adress + "\"><div style=\"padding:25px; width:50%; background-color:#0174DF; border-radius:10px;text-align:center;\">ACCES SERVEUR</div></a>"
 
 	msg.attach(MIMEText(body, 'html'))
 
